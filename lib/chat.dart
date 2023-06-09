@@ -28,8 +28,7 @@ class HalamanFiturChat extends StatelessWidget {
       'photoUrl':
           'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
       'lastMessage': 'Terimakasih..',
-      'unreadCount':
-          1, // Menambahkan properti untuk jumlah pesan yang belum dibaca
+      'unreadCount': 1,
     },
     {
       'name': 'Dewi Susilawati',

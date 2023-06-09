@@ -27,17 +27,16 @@ class DetailChat extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Container(
-              color: Colors.white, // Warna latar belakang banner
+              color: Colors.white,
               child: Column(
                 children: [
                   Container(
                     height: 70,
-                    color: Color.fromARGB(
-                        255, 78, 119, 78), // Warna latar belakang banner
+                    color: Color.fromARGB(255, 78, 119, 78),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Padding(
-                        padding: EdgeInsets.only(top: 16), // Atur jarak atas
+                        padding: EdgeInsets.only(top: 16),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -68,8 +67,7 @@ class DetailChat extends StatelessWidget {
                             Align(
                               alignment: Alignment.bottomLeft,
                               child: Padding(
-                                padding: EdgeInsets.only(
-                                    left: 90), // Atur jarak dari kiri dan bawah
+                                padding: EdgeInsets.only(left: 90),
                                 child: Text(
                                   'Aktif 2 jam yang lalu',
                                   style: TextStyle(
@@ -90,77 +88,64 @@ class DetailChat extends StatelessWidget {
                     child: ListView(
                       padding: EdgeInsets.all(20),
                       children: [
-                        // Tambahkan percakapan antara pengguna di sini
                         Container(
-                          margin: EdgeInsets.only(
-                              bottom: 12), // Atur jarak antara kotak percakapan
+                          margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
                             message: 'Hallo, apa kabar?',
                             isMe: true,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14), // Atur ukuran kotak percakapan
-                            time: '10:30', // Waktu pesan
+                                horizontal: 14, vertical: 14),
+                            time: '10:30',
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
-                              bottom: 12), // Atur jarak antara kotak percakapan
+                          margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
                             message: 'Hai, kabar baik. Kamu gmn??',
                             isMe: false,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14), // Atur ukuran kotak percakapan
-                            time: '10:32', // Waktu pesan
+                                horizontal: 14, vertical: 14),
+                            time: '10:32',
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
-                              bottom: 12), // Atur jarak antara kotak percakapan
+                          margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
                             message: 'Baik juga. Apa kesibukanmu sekarang?',
                             isMe: true,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14), // Atur ukuran kotak percakapan
-                            time: '10:35', // Waktu pesan
+                                horizontal: 14, vertical: 14),
+                            time: '10:35',
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
-                              bottom: 12), // Atur jarak antara kotak percakapan
+                          margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
                             message: 'Sibuk berjualan baju nih...',
                             isMe: false,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14), // Atur ukuran kotak percakapan
-                            time: '10:37', // Waktu pesan
+                                horizontal: 14, vertical: 14),
+                            time: '10:37',
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
-                              bottom: 12), // Atur jarak antara kotak percakapan
+                          margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
                             message: 'Wah keren yah, sukses!',
                             isMe: true,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14), // Atur ukuran kotak percakapan
-                            time: '10:39', // Waktu pesan
+                                horizontal: 14, vertical: 14),
+                            time: '10:39',
                           ),
                         ),
                         Container(
-                          margin: EdgeInsets.only(
-                              bottom: 12), // Atur jarak antara kotak percakapan
+                          margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
                             message: 'Terima kasih...',
                             isMe: false,
                             padding: EdgeInsets.symmetric(
-                                horizontal: 14,
-                                vertical: 14), // Atur ukuran kotak percakapan
-                            time: '10:42', // Waktu pesan
+                                horizontal: 14, vertical: 14),
+                            time: '10:42',
                           ),
                         ),
                       ],
@@ -168,8 +153,7 @@ class DetailChat extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Container(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 14), // Atur padding kotak pesan
+                    padding: EdgeInsets.symmetric(horizontal: 14),
                     child: Row(
                       children: [
                         Expanded(
@@ -185,9 +169,7 @@ class DetailChat extends StatelessWidget {
                         SizedBox(width: 10),
                         IconButton(
                           icon: Icon(Icons.send),
-                          onPressed: () {
-                            // Aksi tombol kirim pesan
-                          },
+                          onPressed: () {},
                         ),
                       ],
                     ),

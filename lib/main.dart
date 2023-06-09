@@ -26,7 +26,6 @@ import 'notification_investor.dart';
 import 'topup_investor.dart';
 import 'tarik_dana_investor.dart';
 import 'detail_topup_investor.dart';
-import 'search_investor.dart';
 import 'report_active_investor.dart';
 import 'profile_investor.dart';
 import 'detail_mitra.dart';
@@ -76,7 +75,6 @@ class MyApp extends StatelessWidget {
         '/topup_investor': (context) => HalamanTopupInvestor(),
         '/tarik_dana_investor': (context) => HalamanTarikDana(),
         '/detail_topup_investor': (context) => HalamanTarikDana(),
-        '/search_investor': (context) => MenuSearchPageInvestor(),
         '/report_investor': (context) => ReportPage(),
         '/profile_investor': (context) => ProfileScreenPage(),
         '/detail_mitra': (context) => HalamanDetailMitra(),

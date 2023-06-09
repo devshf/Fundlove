@@ -33,7 +33,7 @@ class ReportPage extends StatefulWidget {
 }
 
 class _ReportPageState extends State<ReportPage> {
-  int _currentIndex = 2;
+  int _currentIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -98,16 +98,6 @@ class _ReportPageState extends State<ReportPage> {
               ),
               label: 'Home',
               activeIcon: Icon(Icons.home, color: Color(0xFF1C4B1C)),
-            ),
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
-                  Navigator.pushReplacementNamed(context, '/search_investor');
-                },
-                child: Icon(Icons.search, color: Colors.grey),
-              ),
-              label: "Search",
-              activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
             ),
             BottomNavigationBarItem(
               icon: GestureDetector(

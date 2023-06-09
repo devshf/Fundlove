@@ -6,7 +6,6 @@ import 'notification_investor.dart';
 import 'topup_investor.dart';
 import 'tarik_dana_investor.dart';
 import 'detail_topup_investor.dart';
-import 'search_investor.dart';
 import 'edit_profil_investor.dart';
 import 'data_pribadi_investor.dart';
 import 'riwayat_pendanaan_investor.dart';
@@ -38,7 +37,7 @@ class ProfileScreenPage extends StatefulWidget {
 }
 
 class _ProfileScreenPageState extends State<ProfileScreenPage> {
-  int _currentIndex = 3;
+  int _currentIndex = 2;
 
   void onTabTapped(int index) {
     setState(() {
@@ -275,17 +274,6 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
             label: 'Home',
             activeIcon:
                 Icon(Icons.home, color: Color.fromARGB(255, 78, 119, 78)),
-          ),
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/search_investor');
-              },
-              child: Icon(Icons.search, color: Colors.grey),
-            ),
-            label: "Search",
-            activeIcon:
-                Icon(Icons.search, color: Color.fromARGB(255, 78, 119, 78)),
           ),
           BottomNavigationBarItem(
             icon: GestureDetector(

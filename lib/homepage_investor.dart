@@ -651,16 +651,6 @@ class HomePageState extends State<HomePageInvestor> {
             BottomNavigationBarItem(
               icon: GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, '/search_investor');
-                },
-                child: Icon(Icons.search, color: Colors.grey),
-              ),
-              label: "Search",
-              activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
-            ),
-            BottomNavigationBarItem(
-              icon: GestureDetector(
-                onTap: () {
                   Navigator.pushReplacementNamed(context, '/report_investor');
                 },
                 child: Icon(Icons.report, color: Colors.grey),
