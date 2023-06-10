@@ -10,6 +10,8 @@ import 'search.dart';
 import 'profile.dart';
 import 'reportmenu.dart';
 
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(ReportApp());
 }
@@ -49,23 +51,16 @@ class _ReportScreenState extends State<ReportScreen>
     super.dispose();
   }
 
-  // void _changeBottomNavIndex(int index) {
-  //   setState(() {
-  //     _currentBottomNavIndex = index;
-  //   });
-  // }
-  int _currentIndex = 2;
-
-  void _onTabTapped(int index) {
+  void _changeBottomNavIndex(int index) {
     setState(() {
-      _currentIndex = index;
+      _currentBottomNavIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double boxWidth = width * 0.8;
+    double boxWidth = width * 0.8; // 80% of screen width
 
     return Scaffold(
       appBar: AppBar(
@@ -94,7 +89,7 @@ class _ReportScreenState extends State<ReportScreen>
         children: [
           Container(
             child: Align(
-              alignment: Alignment.topLeft,
+              alignment: Alignment.topCenter,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -126,7 +121,6 @@ class _ReportScreenState extends State<ReportScreen>
                               ),
                             ],
                           ),
-                          SizedBox(height: 6.0),
                         ],
                       ),
                     ),
@@ -143,8 +137,8 @@ class _ReportScreenState extends State<ReportScreen>
                     child: Stack(
                       children: [
                         Positioned(
-                          top: 16.0,
-                          left: 16.0,
+                          top: 8.0,
+                          left: 8.0,
                           child: CircleAvatar(
                             radius: 20.0,
                             backgroundImage: NetworkImage(
@@ -155,7 +149,8 @@ class _ReportScreenState extends State<ReportScreen>
                         Positioned(
                           top: 16.0,
                           left: 72.0,
-                          child: Row(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 'Bayu Permana',
@@ -165,7 +160,7 @@ class _ReportScreenState extends State<ReportScreen>
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 12.0), // Jarak antara teks
+                              SizedBox(width: 5.0), // Jarak antara teks
                               Text(
                                 'Sedang Berjalan',
                                 style: TextStyle(
@@ -178,40 +173,117 @@ class _ReportScreenState extends State<ReportScreen>
                           ),
                         ),
                         Positioned(
-                          bottom: 16.0,
+                          bottom: 52.0,
                           left: 16.0,
                           child: Align(
                             alignment: Alignment.bottomLeft,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Waktu Pengajuan                                                          15 Februari 2023',
-                                  style: TextStyle(
-                                    fontSize: 10.0,
-                                    color: Colors
-                                        .white, // Mengubah warna teks menjadi putih
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8.0), // Padding atas
+                                    child: Text(
+                                      'Waktu Pengajuan                                                          15 Februari 2023',
+                                      style: TextStyle(
+                                        fontSize: 10.0,
+                                        color: Colors.white, // Mengubah warna teks menjadi putih
+                                      ),
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: 8.0), // Jarak antara teks
-                                Text(
-                                  'Durasi Pinjaman                                                            24 Bulan',
-                                  style: TextStyle(
-                                    fontSize: 10.0,
-                                    color: Colors
-                                        .white, // Mengubah warna teks menjadi putih
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'Durasi Pinjaman                                                            24 Bulan',
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: 8.0), // Jarak antara teks
-                                Text(
-                                  'Dana Pinjaman                                                              Rp 15.000.000',
-                                  style: TextStyle(
-                                    fontSize: 10.0,
-                                    color: Colors.white,
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'Dana Pinjaman                                                              Rp 15.000.000',
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                    ),
                                   ),
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: 100.0,
+                                height: 30.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Sudah dibayar',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Rp 8.000.000',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                width: 110.0,
+                                height: 30.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Sisa pinjaman',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 12.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Rp 7.000.000',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 10.0,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
@@ -221,83 +293,52 @@ class _ReportScreenState extends State<ReportScreen>
               ),
             ),
           ),
-          ListView.builder(
-            itemCount: 2,
-            itemBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                height: 200.0,
-                width: 150.0,
-                child: Container(
-                  margin: EdgeInsets.symmetric(vertical: 16.0),
-                  padding: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 78, 119, 78),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 16.0,
-                        left: 16.0,
-                        child: CircleAvatar(
-                          radius: 20.0,
-                          backgroundImage: NetworkImage(
-                            'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+          Container(
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 16.0),
+                  Container(
+                    padding: EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 78, 119, 78),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    height: 200.0,
+                    width: boxWidth,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 8.0,
+                          left: 8.0,
+                          child: CircleAvatar(
+                            radius: 20.0,
+                            backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+                            ),
                           ),
                         ),
-                      ),
-                      Positioned(
-                        top: 16.0,
-                        left: 72.0,
-                        child: Row(
-                          children: [
-                            Text(
-                              'Bayu Permana',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 10.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(width: 12.0),
-                            Text(
-                              'Selesai',
-                              style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 10.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 16.0,
-                        left: 16.0,
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
+                        Positioned(
+                          top: 16.0,
+                          left: 72.0,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Waktu Pengajuan                                                          15 Februari 2023',
+                                'Alissa Susanti',
                                 style: TextStyle(
+                                  fontWeight: FontWeight.bold,
                                   fontSize: 10.0,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(height: 8.0),
+                              SizedBox(width: 5.0), // Jarak antara teks
                               Text(
-                                'Durasi Pinjaman                                                            24 Bulan',
+                                '3 April 2023',
                                 style: TextStyle(
-                                  fontSize: 10.0,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(height: 8.0),
-                              Text(
-                                'Dana Pinjaman                                                              Rp 15.000.000',
-                                style: TextStyle(
+                                  fontWeight: FontWeight.normal,
                                   fontSize: 10.0,
                                   color: Colors.white,
                                 ),
@@ -305,58 +346,184 @@ class _ReportScreenState extends State<ReportScreen>
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                        Positioned(
+                          bottom: 52.0,
+                          left: 16.0,
+                          child: Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8.0), // Padding atas
+                                    child: Text(
+                                      'Waktu Pengajuan                                                          3 April 2022',
+                                      style: TextStyle(
+                                        fontSize: 10.0,
+                                        color: Colors.white, // Mengubah warna teks menjadi putih
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 8.0), // Jarak antara teks
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'Durasi Pinjaman                                                            12 Bulan',
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 8.0), // Jarak antara teks
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'Dana Pinjaman                                                              Rp 5.000.000',
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                  SizedBox(height: 16.0),
+                  Container(
+                    padding: EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 78, 119, 78),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    height: 200.0,
+                    width: boxWidth,
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 8.0,
+                          left: 8.0,
+                          child: CircleAvatar(
+                            radius: 20.0,
+                            backgroundImage: NetworkImage(
+                              'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: 16.0,
+                          left: 72.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Dewi Halimah',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 10.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 5.0), // Jarak antara teks
+                              Text(
+                                '1 Januari 2022',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 10.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 52.0,
+                          left: 16.0,
+                          child: Align(
+                            alignment: Alignment.bottomLeft,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 8.0), // Padding atas
+                                    child: Text(
+                                      'Waktu Pengajuan                                                          1 Januari 2020',
+                                      style: TextStyle(
+                                        fontSize: 10.0,
+                                        color: Colors.white, // Mengubah warna teks menjadi putih
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 8.0), // Jarak antara teks
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'Durasi Pinjaman                                                            24 Bulan',
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 8.0), // Jarak antara teks
+                                Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'Dana Pinjaman                                                              Rp 10.000.000',
+                                    style: TextStyle(
+                                      fontSize: 10.0,
+                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        selectedItemColor: Color(0xFF1C4B1C),
-        items: <BottomNavigationBarItem>[
+        currentIndex: _currentBottomNavIndex,
+        onTap: _changeBottomNavIndex,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Color.fromARGB(255, 78, 119, 78), 
+        items: [
           BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/homepage');
-              },
-              child: Icon(Icons.home, color: Colors.grey),
-            ),
+            icon: Icon(Icons.home),
             label: 'Home',
-            activeIcon: Icon(Icons.home, color: Color(0xFF1C4B1C)),
           ),
           BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/search');
-              },
-              child: Icon(Icons.search, color: Colors.grey),
-            ),
-            label: "Search",
-            activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
+            icon: Icon(Icons.search),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/report');
-              },
-              child: Icon(Icons.report, color: Colors.grey),
-            ),
-            label: "Report",
-            activeIcon: Icon(Icons.report, color: Color(0xFF1C4B1C)),
+            icon: Icon(Icons.report),
+            label: 'Report',
           ),
           BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/profile');
-              },
-              child: Icon(Icons.account_circle, color: Colors.grey),
-            ),
-            label: "Profile",
-            activeIcon: Icon(Icons.account_circle, color: Color(0xFF1C4B1C)),
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
       ),

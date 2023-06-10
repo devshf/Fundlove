@@ -17,6 +17,8 @@ import 'data_pribadi.dart';
 import 'pusat_bantuan.dart';
 import 'metode_tagihan.dart';
 import 'detailchat.dart';
+import 'topup_member.dart';
+import 'tarik_dana_member.dart';
 
 //Investor
 import 'homepage_investor.dart';
@@ -31,6 +33,7 @@ import 'profile_investor.dart';
 import 'detail_mitra.dart';
 import 'data_pribadi_investor.dart';
 import 'riwayat_pendanaan_investor.dart';
+import 'laporan_detail_permitra.dart';
 
 void main() {
   runApp(MyApp());
@@ -66,6 +69,8 @@ class MyApp extends StatelessWidget {
         '/pusat_bantuan': (context) => HalamanPusatBantuan(),
         '/metode_tagihan': (context) => HalamanTopUp(),
         '/detail_chat': (context) => DetailChat(),
+        '/topup_member': (context) => HalamanTopupMember(),
+        '/tarik_dana_member': (context) => HalamanTarikDanaMember(),
 
         //Investor
         '/homepage_investor': (context) => HomePageInvestor(),
@@ -75,11 +80,13 @@ class MyApp extends StatelessWidget {
         '/topup_investor': (context) => HalamanTopupInvestor(),
         '/tarik_dana_investor': (context) => HalamanTarikDana(),
         '/detail_topup_investor': (context) => HalamanTarikDana(),
+        //     '/search_investor': (context) => MenuSearchPageInvestor(),
         '/report_investor': (context) => ReportPage(),
         '/profile_investor': (context) => ProfileScreenPage(),
         '/detail_mitra': (context) => HalamanDetailMitra(),
         '/data_pribadi_investor': (context) => HalamanDataPribadiInvestor(),
         '/riwayat_pendanaan_investor': (context) => RiwayatPendanaanInvestor(),
+        '/detail_permitra': (context) => DetailLaporanPerMitra(),
       },
     );
   }

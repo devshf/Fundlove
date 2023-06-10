@@ -22,10 +22,9 @@ class ProfilePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Halaman Profil',
       theme: ThemeData(
-        primaryColor: Color.fromARGB(255, 78, 119, 78),
-        backgroundColor: Color.fromARGB(255, 78, 119, 78),
-        scaffoldBackgroundColor: Colors.white,
-      ),
+          primaryColor: Color.fromARGB(255, 78, 119, 78),
+          backgroundColor: Color.fromARGB(255, 78, 119, 78),
+          scaffoldBackgroundColor: Colors.transparent),
       home: ProfileScreenPage(),
     );
   }
@@ -51,13 +50,6 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
       appBar: AppBar(
         title: Text('Profil'),
         backgroundColor: Color.fromARGB(255, 78, 119, 78),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // jika ditap
-        },
-        backgroundColor: Colors.grey,
-        child: const Icon(Icons.add_rounded),
       ),
       drawer: Drawer(
         child: ListView(
@@ -152,7 +144,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: Colors.transparent,
                                 ),
                               ),
                               SizedBox(height: 0),

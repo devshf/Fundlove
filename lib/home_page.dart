@@ -86,161 +86,292 @@ class _HomePageState extends State<HomePage>
       ),
       body: Column(
         children: [
-          SizedBox(height: 16),
-          Container(
-            height: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/ajukan_pinjaman');
-                      },
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.add_circle,
-                          color: Colors.white,
-                        ),
+          // SizedBox(height: 16.0),
+          // Container(
+          //   padding: EdgeInsets.fromLTRB(16, 6, 16, 6),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.start,
+          //     mainAxisAlignment: MainAxisAlignment.start,
+          //     children: [
+          //       Row(
+          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //         children: [
+          //           Padding(
+          //             padding: EdgeInsets.only(right: 16),
+          //             child: Text(
+          //               'Total asetmu',
+          //               textAlign: TextAlign.left,
+          //               style: TextStyle(
+          //                 fontSize: 14,
+          //                 fontWeight: FontWeight.normal,
+          //               ),
+          //             ),
+          //           ),
+          //           Padding(
+          //             padding: EdgeInsets.only(left: 16),
+          //             child: Text(
+          //               'Total profit',
+          //               textAlign: TextAlign.left,
+          //               style: TextStyle(
+          //                 fontSize: 14,
+          //                 fontWeight: FontWeight.normal,
+          //                 color: Colors.black,
+          //               ),
+          //             ),
+          //           ),
+          //         ],
+          //       ),
+          //       Row(
+          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //         children: [
+          //           Padding(
+          //             padding: EdgeInsets.only(bottom: 16, right: 16),
+          //             child: Text(
+          //               'Rp100.000.000',
+          //               overflow: TextOverflow.ellipsis,
+          //               textAlign: TextAlign.left,
+          //               style: TextStyle(
+          //                 fontSize: 14,
+          //                 fontWeight: FontWeight.bold,
+          //                 color: Colors.black,
+          //               ),
+          //             ),
+          //           ),
+          //           Padding(
+          //             padding: EdgeInsets.only(left: 16.0, bottom: 16.0),
+          //             child: Text(
+          //               'Rp50.000.000',
+          //               overflow: TextOverflow.ellipsis,
+          //               textAlign: TextAlign.left,
+          //               style: TextStyle(
+          //                 fontSize: 14,
+          //                 fontWeight: FontWeight.bold,
+          //                 color: Colors.black,
+          //               ),
+          //             ),
+          //           ),
+          //         ],
+          //       ),
+          //     ],
+          //   ),
+          // ),
+          Expanded(
+            child: Container(
+              child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1C4B1C),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: ListTile(
+                      contentPadding: EdgeInsets.all(10),
+                      title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Saldo Aktif",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            "Rp5.000.000",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        primary: Color(0xFF1C4B1C),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.add_circle, color: Colors.white),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('/topup_member');
+                            },
+                          ),
+                          SizedBox(width: 16),
+                          IconButton(
+                            icon: Icon(Icons.money, color: Colors.white),
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushNamed('/tarik_dana_member');
+                            },
+                          ),
+                        ],
                       ),
                     ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Ajukan Pinjaman',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/tagihan');
-                      },
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
+                  ),
+                  // Add other list items here
+
+                  SizedBox(height: 16),
+                  Container(
+                    height: 80,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed('/ajukan_pinjaman');
+                              },
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.add_circle,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                primary: Color(0xFF1C4B1C),
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              'Ajukan Pinjaman',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
-                        child: Icon(
-                          Icons.assignment_add,
-                          color: Colors.white,
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context).pushNamed('/tagihan');
+                              },
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.assignment_add,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                primary: Color(0xFF1C4B1C),
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              'Tagihan',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed('/bayar_tagihan');
+                              },
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.payment_outlined,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                primary: Color(0xFF1C4B1C),
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              'Pembayaran',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed('/transaksi_terakhir');
+                              },
+                              child: Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Icon(
+                                  Icons.watch_later_outlined,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                shape: CircleBorder(),
+                                primary: Color(0xFF1C4B1C),
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              'Transaksi Terakhir',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(height: 16), // jarak di bawah menu layanan
+                  TabBar(
+                    controller: _tabController,
+                    indicatorColor: Colors.black,
+                    tabs: [
+                      Tab(
+                        child: Text(
+                          'Beranda',
+                          style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        primary: Color(0xFF1C4B1C),
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Tagihan',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/bayar_tagihan');
-                      },
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.payment_outlined,
-                          color: Colors.white,
+                      Tab(
+                        child: Text(
+                          'Following',
+                          style: TextStyle(color: Colors.black),
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        primary: Color(0xFF1C4B1C),
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Pembayaran',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/transaksi_terakhir');
-                      },
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.watch_later_outlined,
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        shape: CircleBorder(),
-                        primary: Color(0xFF1C4B1C),
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'Transaksi Terakhir',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 16), // jarak di bawah menu layanan
-          TabBar(
-            controller: _tabController,
-            indicatorColor: Colors.black,
-            tabs: [
-              Tab(
-                child: Text(
-                  'Beranda',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-              Tab(
-                child: Text(
-                  'Following',
-                  style: TextStyle(color: Colors.black),
-                ),
-              ),
-            ],
           ),
           Expanded(
             child: TabBarView(
