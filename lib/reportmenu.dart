@@ -60,7 +60,7 @@ class _ReportScreenState extends State<ReportScreen>
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double boxWidth = width * 0.8; // 80% of screen width
+    double boxWidth = width * 0.8;
 
     return Scaffold(
       appBar: AppBar(
@@ -160,7 +160,7 @@ class _ReportScreenState extends State<ReportScreen>
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 5.0), // Jarak antara teks
+                              SizedBox(width: 5.0),
                               Text(
                                 'Sedang Berjalan',
                                 style: TextStyle(
@@ -189,30 +189,30 @@ class _ReportScreenState extends State<ReportScreen>
                                       'Waktu Pengajuan                                                          15 Februari 2023',
                                       style: TextStyle(
                                         fontSize: 10.0,
-                                        color: Colors.white, // Mengubah warna teks menjadi putih
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0), // Jarak antara teks
+                                SizedBox(height: 8.0),
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Durasi Pinjaman                                                            24 Bulan',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0), // Jarak antara teks
+                                SizedBox(height: 8.0),
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Dana Pinjaman                                                              Rp 15.000.000',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -334,7 +334,7 @@ class _ReportScreenState extends State<ReportScreen>
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 5.0), // Jarak antara teks
+                              SizedBox(width: 5.0),
                               Text(
                                 '3 April 2023',
                                 style: TextStyle(
@@ -363,30 +363,30 @@ class _ReportScreenState extends State<ReportScreen>
                                       'Waktu Pengajuan                                                          3 April 2022',
                                       style: TextStyle(
                                         fontSize: 10.0,
-                                        color: Colors.white, // Mengubah warna teks menjadi putih
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0), // Jarak antara teks
+                                SizedBox(height: 8.0),
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Durasi Pinjaman                                                            12 Bulan',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0), // Jarak antara teks
+                                SizedBox(height: 8.0),
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Dana Pinjaman                                                              Rp 5.000.000',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -394,7 +394,6 @@ class _ReportScreenState extends State<ReportScreen>
                             ),
                           ),
                         ),
-                        
                       ],
                     ),
                   ),
@@ -433,7 +432,7 @@ class _ReportScreenState extends State<ReportScreen>
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 5.0), // Jarak antara teks
+                              SizedBox(width: 5.0),
                               Text(
                                 '1 Januari 2022',
                                 style: TextStyle(
@@ -462,30 +461,30 @@ class _ReportScreenState extends State<ReportScreen>
                                       'Waktu Pengajuan                                                          1 Januari 2020',
                                       style: TextStyle(
                                         fontSize: 10.0,
-                                        color: Colors.white, // Mengubah warna teks menjadi putih
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0), // Jarak antara teks
+                                SizedBox(height: 8.0),
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Durasi Pinjaman                                                            24 Bulan',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0), // Jarak antara teks
+                                SizedBox(height: 8.0),
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Dana Pinjaman                                                              Rp 10.000.000',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white, // Mengubah warna teks menjadi putih
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -493,7 +492,6 @@ class _ReportScreenState extends State<ReportScreen>
                             ),
                           ),
                         ),
-                        
                       ],
                     ),
                   ),
@@ -507,7 +505,7 @@ class _ReportScreenState extends State<ReportScreen>
         currentIndex: _currentBottomNavIndex,
         onTap: _changeBottomNavIndex,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Color.fromARGB(255, 78, 119, 78), 
+        selectedItemColor: Color.fromARGB(255, 78, 119, 78),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:fundlove/firebase_options.dart';
 import 'splashscreen.dart';
 import 'login_sebagai.dart';
 import 'login_page.dart';
@@ -19,6 +21,7 @@ import 'metode_tagihan.dart';
 import 'detailchat.dart';
 import 'topup_member.dart';
 import 'tarik_dana_member.dart';
+import 'be/auth_page.dart';
 
 //Investor
 import 'homepage_investor.dart';
@@ -28,6 +31,7 @@ import 'notification_investor.dart';
 import 'topup_investor.dart';
 import 'tarik_dana_investor.dart';
 import 'detail_topup_investor.dart';
+//import 'search_investor.dart';
 import 'report_active_investor.dart';
 import 'profile_investor.dart';
 import 'detail_mitra.dart';
@@ -35,7 +39,11 @@ import 'data_pribadi_investor.dart';
 import 'riwayat_pendanaan_investor.dart';
 import 'laporan_detail_permitra.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -80,7 +88,6 @@ class MyApp extends StatelessWidget {
         '/topup_investor': (context) => HalamanTopupInvestor(),
         '/tarik_dana_investor': (context) => HalamanTarikDana(),
         '/detail_topup_investor': (context) => HalamanTarikDana(),
-        //     '/search_investor': (context) => MenuSearchPageInvestor(),
         '/report_investor': (context) => ReportPage(),
         '/profile_investor': (context) => ProfileScreenPage(),
         '/detail_mitra': (context) => HalamanDetailMitra(),

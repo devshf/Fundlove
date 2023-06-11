@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1093172743539",
+    "project_id": "fundlove-1ebe4",
+    "storage_bucket": "fundlove-1ebe4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093172743539:android:cdc6f0c5d90ff451298906",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_fund"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093172743539-j6up87qokabf54cq6jdrf1poaqumur0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYYXq2jP1F6tfKB0PC8cefdOzF1x1rH-o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093172743539-j6up87qokabf54cq6jdrf1poaqumur0n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1093172743539-crt6mp7mtqg6u39oakcqqnitglgu6vqh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplicationFund"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

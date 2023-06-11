@@ -1,7 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'home_page.dart';
 
-void main() => runApp(PageLogin());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(PageLogin());
+}
 
 class PageLogin extends StatelessWidget {
   @override
@@ -33,6 +38,55 @@ class _HalamanLoginState extends State<HalamanLogin> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  // sign user in method
+  void signUserIn(BuildContext context) async {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+      Navigator.pop(context);
+      Navigator.of(context).pushNamed('/homepage');
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      if (e.code == 'user-not-found') {
+        wrongEmailMessage();
+      } else if (e.code == 'wrong-password') {
+        wrongPasswordMessage();
+      }
+    }
+  }
+
+  void wrongEmailMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Email tidak terdaftar'),
+        );
+      },
+    );
+  }
+
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('Password salah'),
+        );
+      },
+    );
+  }
+
   @override
   void dispose() {
     _emailController.dispose();
@@ -52,8 +106,8 @@ class _HalamanLoginState extends State<HalamanLogin> {
               alignment: Alignment.center,
               child: Column(
                 children: [
-                  Image(
-                    image: NetworkImage("https://iili.io/HgQKsyX.png"),
+                  Image.network(
+                    "https://iili.io/HgQKsyX.png",
                     width: 300,
                     height: 300,
                   ),
@@ -76,9 +130,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
             Padding(padding: EdgeInsets.only(top: 24)),
             ElevatedButton(
               onPressed: () {
-                String email = _emailController.text;
-                String password = _passwordController.text;
-                Navigator.of(context).pushNamed('/homepage');
+                signUserIn(context);
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 78, 119, 78),
