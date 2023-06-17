@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:tubes_promvis/firebase_options.dart';
+import 'package:fundlove/firebase_options.dart';
 import 'splashscreen.dart';
 import 'login_sebagai.dart';
 import 'login_page.dart';
