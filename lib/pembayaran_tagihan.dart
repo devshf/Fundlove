@@ -84,18 +84,6 @@ class HalamanPembayaranTagihan extends StatelessWidget {
                               ),
                             ),
                           ),
-
-                          // Padding(
-                          //   padding: EdgeInsets.only(top: 8),
-                          //   child: TextField(
-                          //     decoration: InputDecoration(
-                          //       hintText: "Masukkan metode penarikan",
-                          //     ),
-                          //     // controller: ... nanti diisi
-                          //     // onChanged: ... nanti diisi
-                          //     // ...
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),
@@ -131,48 +119,7 @@ class HalamanPembayaranTagihan extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 16),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: Color.fromARGB(255, 202, 202, 202),
-                        width: 2,
-                      ),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.all(10),
-                      title: Text(
-                        "1/6 Pembayaran Bulanan",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      subtitle: Text(
-                        "11 Januari 2024",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      trailing: Text(
-                        "Rp 500.000",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 126),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 64),
+                    padding: EdgeInsets.only(top: 32),
                   ),
                   ElevatedButton(
                     onPressed: () {

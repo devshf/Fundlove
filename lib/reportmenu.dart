@@ -51,16 +51,23 @@ class _ReportScreenState extends State<ReportScreen>
     super.dispose();
   }
 
-  void _changeBottomNavIndex(int index) {
+  // void _changeBottomNavIndex(int index) {
+  //   setState(() {
+  //     _currentBottomNavIndex = index;
+  //   });
+  // }
+  int _currentIndex = 1;
+
+  void _onTabTapped(int index) {
     setState(() {
-      _currentBottomNavIndex = index;
+      _currentIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double boxWidth = width * 0.8;
+    double boxWidth = width * 0.8; // 80% of screen width
 
     return Scaffold(
       appBar: AppBar(
@@ -93,38 +100,17 @@ class _ReportScreenState extends State<ReportScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 16.0),
-                  FractionallySizedBox(
-                    widthFactor: 0.4,
-                    child: Container(
-                      padding: EdgeInsets.all(16.0),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.add_circle,
-                                color: Colors.grey,
-                              ),
-                              SizedBox(width: 6.0),
-                              Text(
-                                'Buat Laporan',
-                                style: TextStyle(
-                                  fontSize: 12.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  // SizedBox(height: 16.0),
+                  // FractionallySizedBox(
+                  //   widthFactor: 0.4,
+                  //   child: Container(
+                  //     padding: EdgeInsets.all(16.0),
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.grey[200],
+                  //       borderRadius: BorderRadius.circular(10.0),
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(height: 16.0),
                   Container(
                     padding: EdgeInsets.all(16.0),
@@ -141,9 +127,8 @@ class _ReportScreenState extends State<ReportScreen>
                           left: 8.0,
                           child: CircleAvatar(
                             radius: 20.0,
-                            backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
-                            ),
+                            backgroundImage:
+                                AssetImage('images/dianpratama.png'),
                           ),
                         ),
                         Positioned(
@@ -153,14 +138,14 @@ class _ReportScreenState extends State<ReportScreen>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Bayu Permana',
+                                'Dian Pratama',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 10.0,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 5.0),
+                              SizedBox(width: 5.0), // Jarak antara teks
                               Text(
                                 'Sedang Berjalan',
                                 style: TextStyle(
@@ -189,30 +174,33 @@ class _ReportScreenState extends State<ReportScreen>
                                       'Waktu Pengajuan                                                          15 Februari 2023',
                                       style: TextStyle(
                                         fontSize: 10.0,
-                                        color: Colors.white,
+                                        color: Colors
+                                            .white, // Mengubah warna teks menjadi putih
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 8.0), // Jarak antara teks
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Durasi Pinjaman                                                            24 Bulan',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white,
+                                      color: Colors
+                                          .white, // Mengubah warna teks menjadi putih
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 8.0), // Jarak antara teks
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Dana Pinjaman                                                              Rp 15.000.000',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white,
+                                      color: Colors
+                                          .white, // Mengubah warna teks menjadi putih
                                     ),
                                   ),
                                 ),
@@ -315,9 +303,7 @@ class _ReportScreenState extends State<ReportScreen>
                           left: 8.0,
                           child: CircleAvatar(
                             radius: 20.0,
-                            backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
-                            ),
+                            backgroundImage: AssetImage('images/ana.png'),
                           ),
                         ),
                         Positioned(
@@ -327,14 +313,14 @@ class _ReportScreenState extends State<ReportScreen>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Alissa Susanti',
+                                'Anna Aniyyah',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 10.0,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 5.0),
+                              SizedBox(width: 5.0), // Jarak antara teks
                               Text(
                                 '3 April 2023',
                                 style: TextStyle(
@@ -363,30 +349,33 @@ class _ReportScreenState extends State<ReportScreen>
                                       'Waktu Pengajuan                                                          3 April 2022',
                                       style: TextStyle(
                                         fontSize: 10.0,
-                                        color: Colors.white,
+                                        color: Colors
+                                            .white, // Mengubah warna teks menjadi putih
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 8.0), // Jarak antara teks
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Durasi Pinjaman                                                            12 Bulan',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white,
+                                      color: Colors
+                                          .white, // Mengubah warna teks menjadi putih
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 8.0), // Jarak antara teks
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Dana Pinjaman                                                              Rp 5.000.000',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white,
+                                      color: Colors
+                                          .white, // Mengubah warna teks menjadi putih
                                     ),
                                   ),
                                 ),
@@ -413,9 +402,7 @@ class _ReportScreenState extends State<ReportScreen>
                           left: 8.0,
                           child: CircleAvatar(
                             radius: 20.0,
-                            backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
-                            ),
+                            backgroundImage: AssetImage('images/endang.png'),
                           ),
                         ),
                         Positioned(
@@ -425,14 +412,14 @@ class _ReportScreenState extends State<ReportScreen>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Dewi Halimah',
+                                'Deri Renaldi',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 10.0,
                                   color: Colors.white,
                                 ),
                               ),
-                              SizedBox(width: 5.0),
+                              SizedBox(width: 5.0), // Jarak antara teks
                               Text(
                                 '1 Januari 2022',
                                 style: TextStyle(
@@ -461,30 +448,33 @@ class _ReportScreenState extends State<ReportScreen>
                                       'Waktu Pengajuan                                                          1 Januari 2020',
                                       style: TextStyle(
                                         fontSize: 10.0,
-                                        color: Colors.white,
+                                        color: Colors
+                                            .white, // Mengubah warna teks menjadi putih
                                       ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 8.0), // Jarak antara teks
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Durasi Pinjaman                                                            24 Bulan',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white,
+                                      color: Colors
+                                          .white, // Mengubah warna teks menjadi putih
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                SizedBox(height: 8.0), // Jarak antara teks
                                 Align(
                                   alignment: Alignment.bottomLeft,
                                   child: Text(
                                     'Dana Pinjaman                                                              Rp 10.000.000',
                                     style: TextStyle(
                                       fontSize: 10.0,
-                                      color: Colors.white,
+                                      color: Colors
+                                          .white, // Mengubah warna teks menjadi putih
                                     ),
                                   ),
                                 ),
@@ -502,26 +492,48 @@ class _ReportScreenState extends State<ReportScreen>
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentBottomNavIndex,
-        onTap: _changeBottomNavIndex,
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Color.fromARGB(255, 78, 119, 78),
-        items: [
+        currentIndex: _currentIndex,
+        selectedItemColor: Color(0xFF1C4B1C),
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/homepage');
+              },
+              child: Icon(Icons.home, color: Colors.grey),
+            ),
             label: 'Home',
+            activeIcon: Icon(Icons.home, color: Color(0xFF1C4B1C)),
+          ),
+          // BottomNavigationBarItem(
+          //   icon: GestureDetector(
+          //     onTap: () {
+          //       Navigator.pushReplacementNamed(context, '/search');
+          //     },
+          //     child: Icon(Icons.search, color: Colors.grey),
+          //   ),
+          //   label: "Search",
+          //   activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
+          // ),
+          BottomNavigationBarItem(
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/report');
+              },
+              child: Icon(Icons.report, color: Colors.grey),
+            ),
+            label: "Report",
+            activeIcon: Icon(Icons.report, color: Color(0xFF1C4B1C)),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.report),
-            label: 'Report',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/profile');
+              },
+              child: Icon(Icons.account_circle, color: Colors.grey),
+            ),
+            label: "Profile",
+            activeIcon: Icon(Icons.account_circle, color: Color(0xFF1C4B1C)),
           ),
         ],
       ),

@@ -12,6 +12,7 @@ import 'reportmenu.dart';
 import 'ubah_sandi.dart';
 import 'data_pribadi.dart';
 import 'pusat_bantuan.dart';
+import 'edit_profil.dart';
 
 void main() {
   runApp(ProfilePage());
@@ -39,7 +40,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  int _currentIndex = 3;
+  int _currentIndex = 2;
 
   void onTabTapped(int index) {
     setState(() {
@@ -51,8 +52,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
-        backgroundColor: Color(0xFF1C4B1C),
+        title: Text(
+          'Profil',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -61,75 +68,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.grey,
         child: const Icon(Icons.add_rounded),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              arrowColor: Color(0xFF1C4B1C),
-              accountName: Text('Maria Purnamasari'), // Nama pengguna
-              accountEmail: Text('@mariapurnama90'), // Email pengguna
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('images/profil_maria.jpg'),
-              ),
-              decoration: BoxDecoration(
-                color: Color(0xFF1C4B1C),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.app_settings_alt_outlined),
-              title: Text('Ubah Password'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/password');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.security_outlined),
-              title: Text('Data Pribadi'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/data_pribadi');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.history_outlined),
-              title: Text('Riwayat Pendanaan'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/transaksi_terakhir');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.help_outline_outlined),
-              title: Text('Pusat Bantuan'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/pusat_bantuan');
-              },
-            ),
-            ListTile(
-              title: Align(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/login_sebagai');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    backgroundColor: Color.fromARGB(255, 78, 119, 78),
-                    minimumSize: Size(48, 48),
-                  ),
-                  child: Text('Logout'),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
       body: ListView(
         children: <Widget>[
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Card(
-              color: Color(0xFF1C4B1C),
+              color: Color.fromARGB(255, 78, 119, 78),
               child: Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Column(
@@ -183,8 +127,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         IconButton(
                           icon: Icon(Icons.edit),
-                          onPressed: () {},
-                          color: Colors.black,
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed('/edit_profil_member');
+                          },
+                          color: Colors.white,
                         ),
                       ],
                     ),
@@ -192,83 +139,81 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text(
                       'Pelaku Usaha Makanan',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                          ),
-                          child: Text(
-                            '25 Followers',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.white,
-                          ),
-                          child: Text(
-                            '73 Following',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ],
+                    SizedBox(height: 8),
+                    Text(
+                      'Berbisnis makanan kecil semakin mudah dengan bantuan aplikasi ini. Dengan dukungan dari para investor, saya bisa terus mengembangkan usaha dan menjangkau lebih banyak pelanggan di Bandung :)',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.justify,
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          Divider(
-            color: Color.fromARGB(255, 78, 119, 78),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
+              child: Text(
+                'Pengaturan Akun',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
           ListTile(
-            trailing: IconButton(
-              icon: Icon(
-                Icons.more_vert,
-                color: Color.fromARGB(255, 78, 118, 78),
-              ),
-              onPressed: () {},
-            ),
-            leading: CircleAvatar(
-              backgroundImage: AssetImage('images/profil_maria.jpg'),
-            ),
-            title: Text(
-              'mariapurnama90',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Image.asset(
-                  'images/carousel.jpg',
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(height: 8),
-                Text(
-                  'Berbisnis makanan kecil semakin mudah dengan bantuan aplikasi ini. Dengan dukungan dari pada investor, saya bisa terus mengembangkan usaha dan menjangkau lebih banyak pelanggan di Bandung :)',
-                  style: TextStyle(
-                    color: Colors.black,
+            leading: Icon(Icons.app_settings_alt_outlined),
+            title: Text('Ubah Password'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/password');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.security_outlined),
+            title: Text('Data Pribadi'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/data_pribadi_investor');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.history_outlined),
+            title: Text('Riwayat Pendanaan'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/transaksi_terakhir');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.help_outline_outlined),
+            title: Text('Pusat Bantuan'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/pusat_bantuan');
+            },
+          ),
+          ListTile(
+            title: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/login_sebagai');
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
                   ),
+                  backgroundColor: Color.fromARGB(255, 78, 119, 78),
+                  minimumSize: Size(48, 48),
                 ),
-              ],
+                child: Text('Logout'),
+              ),
             ),
           ),
         ],
@@ -288,16 +233,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
             label: 'Home',
             activeIcon: Icon(Icons.home, color: Color(0xFF1C4B1C)),
           ),
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/search');
-              },
-              child: Icon(Icons.search, color: Colors.grey),
-            ),
-            label: "Search",
-            activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: GestureDetector(
+          //     onTap: () {
+          //       Navigator.pushReplacementNamed(context, '/search');
+          //     },
+          //     child: Icon(Icons.search, color: Colors.grey),
+          //   ),
+          //   label: "Search",
+          //   activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
+          // ),
           BottomNavigationBarItem(
             icon: GestureDetector(
               onTap: () {

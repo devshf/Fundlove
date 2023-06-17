@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'ubah_sandi.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(HalamanEditMember());
 
-class MyApp extends StatelessWidget {
+class HalamanEditMember extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white, // Warna AppBar
+          backgroundColor: Colors.white,
+          elevation: 0,
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             color: Colors.black,
@@ -59,9 +61,8 @@ class MyApp extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Container(
-                width: 300,
+                //width: 300,
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(10),
                 ),
                 padding: EdgeInsets.all(10),
@@ -99,17 +100,16 @@ class MyApp extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextButton(
-                onPressed: () {
-                  print('Ubah kata sandi');
-                },
-                child: Text(
-                  'Ubah Kata Sandi di Sini',
-                  style: TextStyle(
-                    color: Colors.blue,
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/password');
+                  },
+                  child: Text(
+                    'Ubah Kata Sandi di Sini',
+                    style: TextStyle(
+                      color: Colors.blue, // Warna teks
+                      decoration: TextDecoration.underline,
+                    ),
+                  )),
             ],
           ),
         ),

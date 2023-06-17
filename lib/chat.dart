@@ -28,7 +28,8 @@ class HalamanFiturChat extends StatelessWidget {
       'photoUrl':
           'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
       'lastMessage': 'Terimakasih..',
-      'unreadCount': 1,
+      'unreadCount':
+          1, // Menambahkan properti untuk jumlah pesan yang belum dibaca
     },
     {
       'name': 'Dewi Susilawati',
@@ -37,38 +38,6 @@ class HalamanFiturChat extends StatelessWidget {
           'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
       'lastMessage': 'Berbisnis dengan...',
       'unreadCount': 1,
-    },
-    {
-      'name': 'Mario Maradona',
-      'time': '12.07',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'lastMessage': 'Saya merasa senang ber...',
-      'unreadCount': 0,
-    },
-    {
-      'name': 'Hisyam Ramadhan',
-      'time': 'Kemarin',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'lastMessage': 'Salam kenal dari saya...',
-      'unreadCount': 0,
-    },
-    {
-      'name': 'Ananda Prasetyo',
-      'time': 'Kemarin',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'lastMessage': 'Kesempatan yang berharga...',
-      'unreadCount': 0,
-    },
-    {
-      'name': 'Susi Susanti',
-      'time': 'Kemarin',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'lastMessage': 'Saya merasa bersyukur...',
-      'unreadCount': 0,
     },
     // ...
   ];
@@ -111,31 +80,7 @@ class HalamanFiturChat extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 15),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Row(
-                              children: [
-                                Icon(Icons.search),
-                                SizedBox(width: 10),
-                                Text(
-                                  'Cari',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 14,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+                      children: [],
                     ),
                   ),
                   Expanded(

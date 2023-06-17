@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
+import 'profile_investor.dart';
 
 void main() {
-  runApp(UbahSandi());
+  runApp(UbahSandiInvestor());
 }
 
-class UbahSandi extends StatelessWidget {
+class UbahSandiInvestor extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Ubah Kata Sandi',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-      home: ChangePasswordPage(),
-    );
-  }
+  _UbahSandiInvestorState createState() => _UbahSandiInvestorState();
 }
 
-class ChangePasswordPage extends StatelessWidget {
+class _UbahSandiInvestorState extends State<UbahSandiInvestor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
@@ -65,11 +57,13 @@ class ChangePasswordPage extends StatelessWidget {
                 helperText: 'Ulangi kata sandi baru',
               ),
             ),
-            SizedBox(height: 32.0),
+            Padding(padding: EdgeInsets.only(top: 16)),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                //    signUserIn(context);
+              },
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 78, 119, 78),
+                backgroundColor: Color.fromARGB(255, 78, 119, 78),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),

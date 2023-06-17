@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ubah_sandi_investor.dart';
 
 void main() => runApp(HalamanEditProfile());
 
@@ -47,7 +48,7 @@ class HalamanEditProfile extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 80,
-                backgroundImage: AssetImage('images/profil_maria.jpg'),
+                backgroundImage: AssetImage('images/dianpratama.png'),
               ),
               SizedBox(height: 20),
               TextButton.icon(
@@ -59,9 +60,8 @@ class HalamanEditProfile extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Container(
-                width: 300,
+                //width: 300,
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(10),
                 ),
                 padding: EdgeInsets.all(10),
@@ -99,17 +99,16 @@ class HalamanEditProfile extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextButton(
-                onPressed: () {
-                  print('Ubah kata sandi');
-                },
-                child: Text(
-                  'Ubah Kata Sandi di Sini',
-                  style: TextStyle(
-                    color: Colors.blue, // Warna teks
-                    decoration: TextDecoration.underline,
-                  ),
-                ),
-              ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/ubah_sandi_investor');
+                  },
+                  child: Text(
+                    'Ubah Kata Sandi di Sini',
+                    style: TextStyle(
+                      color: Colors.blue, // Warna teks
+                      decoration: TextDecoration.underline,
+                    ),
+                  )),
             ],
           ),
         ),

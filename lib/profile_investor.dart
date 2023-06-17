@@ -10,6 +10,8 @@ import 'edit_profil_investor.dart';
 import 'data_pribadi_investor.dart';
 import 'riwayat_pendanaan_investor.dart';
 import 'pusat_bantuan.dart';
+import 'edit_profil_investor.dart';
+import 'ubah_sandi_investor.dart';
 
 void main() {
   runApp(ProfilePage());
@@ -48,71 +50,14 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
-        backgroundColor: Color.fromARGB(255, 78, 119, 78),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-              arrowColor: Color.fromARGB(255, 78, 119, 78),
-              accountName: Text('Dian Pratama'), // Nama pengguna
-              accountEmail: Text('@dianpratama'), // Email pengguna
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage('images/dianpratama.png'),
-              ),
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 78, 119, 78),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.app_settings_alt_outlined),
-              title: Text('Ubah Password'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/password');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.security_outlined),
-              title: Text('Data Pribadi'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/data_pribadi_investor');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.history_outlined),
-              title: Text('Riwayat Pendanaan'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/transaksi_terakhir');
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.help_outline_outlined),
-              title: Text('Pusat Bantuan'),
-              onTap: () {
-                Navigator.of(context).pushNamed('/pusat_bantuan');
-              },
-            ),
-            ListTile(
-              title: Align(
-                alignment: Alignment.center,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/login_sebagai');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    backgroundColor: Color.fromARGB(255, 78, 119, 78),
-                    minimumSize: Size(48, 48),
-                  ),
-                  child: Text('Logout'),
-                ),
-              ),
-            ),
-          ],
+        title: Text(
+          'Profil',
+          style: TextStyle(
+            color: Colors.black,
+          ),
         ),
+        backgroundColor: Colors.white,
+        elevation: 0,
       ),
       body: ListView(
         children: <Widget>[
@@ -144,7 +89,7 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.transparent,
+                                  color: Colors.grey[200],
                                 ),
                               ),
                               SizedBox(height: 0),
@@ -176,7 +121,10 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
                         ),
                         IconButton(
                           icon: Icon(Icons.edit),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed('/edit_profil_investor');
+                          },
                           color: Colors.white,
                         ),
                       ],
@@ -246,8 +194,50 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
             ),
           ),
           // pembatas
-          Divider(
-            color: Color.fromARGB(255, 78, 119, 78),
+          // Divider(
+          //   color: Color.fromARGB(255, 78, 119, 78),
+          // ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.only(top: 16, left: 16, bottom: 8),
+              child: Text(
+                'Pengaturan Akun',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+
+          ListTile(
+            leading: Icon(Icons.app_settings_alt_outlined),
+            title: Text('Ubah Password'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/ubah_sandi_investor');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.security_outlined),
+            title: Text('Data Pribadi'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/data_pribadi_investor');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.history_outlined),
+            title: Text('Riwayat Pendanaan'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/transaksi_terakhir');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.help_outline_outlined),
+            title: Text('Pusat Bantuan'),
+            onTap: () {
+              Navigator.of(context).pushNamed('/pusat_bantuan');
+            },
           ),
         ],
       ),

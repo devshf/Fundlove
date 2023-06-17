@@ -38,18 +38,6 @@ class _HomePageState extends State<HomePage>
   late TabController _tabController;
   int _currentIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 2, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
   void onTabTapped(int index) {
     setState(() {
       _currentIndex = index;
@@ -86,85 +74,30 @@ class _HomePageState extends State<HomePage>
       ),
       body: Column(
         children: [
-          // SizedBox(height: 16.0),
-          // Container(
-          //   padding: EdgeInsets.fromLTRB(16, 6, 16, 6),
-          //   child: Column(
-          //     crossAxisAlignment: CrossAxisAlignment.start,
-          //     mainAxisAlignment: MainAxisAlignment.start,
-          //     children: [
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //         children: [
-          //           Padding(
-          //             padding: EdgeInsets.only(right: 16),
-          //             child: Text(
-          //               'Total asetmu',
-          //               textAlign: TextAlign.left,
-          //               style: TextStyle(
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.normal,
-          //               ),
-          //             ),
-          //           ),
-          //           Padding(
-          //             padding: EdgeInsets.only(left: 16),
-          //             child: Text(
-          //               'Total profit',
-          //               textAlign: TextAlign.left,
-          //               style: TextStyle(
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.normal,
-          //                 color: Colors.black,
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //         children: [
-          //           Padding(
-          //             padding: EdgeInsets.only(bottom: 16, right: 16),
-          //             child: Text(
-          //               'Rp100.000.000',
-          //               overflow: TextOverflow.ellipsis,
-          //               textAlign: TextAlign.left,
-          //               style: TextStyle(
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.bold,
-          //                 color: Colors.black,
-          //               ),
-          //             ),
-          //           ),
-          //           Padding(
-          //             padding: EdgeInsets.only(left: 16.0, bottom: 16.0),
-          //             child: Text(
-          //               'Rp50.000.000',
-          //               overflow: TextOverflow.ellipsis,
-          //               textAlign: TextAlign.left,
-          //               style: TextStyle(
-          //                 fontSize: 14,
-          //                 fontWeight: FontWeight.bold,
-          //                 color: Colors.black,
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ],
-          //   ),
-          // ),
           Expanded(
             child: Container(
               child: ListView(
                 padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                 children: [
                   Container(
+                    margin: EdgeInsets.only(bottom: 16),
                     decoration: BoxDecoration(
                       color: Color(0xFF1C4B1C),
                       borderRadius: BorderRadius.circular(8),
                     ),
+                    child: Image.asset(
+                      'images/banner.jpg',
+                      width: 200,
+                      height: 100,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color(0xFF1C4B1C),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    //padding: EdgeInsets.only(top: 16),
                     child: ListTile(
                       contentPadding: EdgeInsets.all(10),
                       title: Column(
@@ -207,8 +140,6 @@ class _HomePageState extends State<HomePage>
                       ),
                     ),
                   ),
-                  // Add other list items here
-
                   SizedBox(height: 16),
                   Container(
                     height: 80,
@@ -349,131 +280,99 @@ class _HomePageState extends State<HomePage>
                       ],
                     ),
                   ),
-
-                  SizedBox(height: 16), // jarak di bawah menu layanan
-                  TabBar(
-                    controller: _tabController,
-                    indicatorColor: Colors.black,
-                    tabs: [
-                      Tab(
-                        child: Text(
-                          'Beranda',
-                          style: TextStyle(color: Colors.black),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 24, left: 4, bottom: 16),
+                      child: Text(
+                        'Riwayat Pengajuan Pinjaman',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Tab(
-                        child: Text(
-                          'Following',
-                          style: TextStyle(color: Colors.black),
-                        ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: Color.fromARGB(255, 202, 202, 202),
+                        width: 1,
                       ),
-                    ],
+                    ),
+                    height: 70,
+                    child: Row(
+                      children: [
+                        // Padding(
+                        //   padding: EdgeInsets.only(left: 10),
+                        //   child: CircleAvatar(
+                        //     radius: 20,
+                        //     backgroundImage: AssetImage('images/dianpratama.png'),
+                        //   ),
+                        // ),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Pengajuan 1",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 8),
+                              ),
+                              Text(
+                                "Nominal: Rp. ..... ",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Text(
+                                "Waktu Pengajuan: ",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              side: BorderSide(
+                                color: Color.fromARGB(255, 78, 119, 78),
+                                width: 2,
+                              ),
+                            ),
+                            minimumSize: Size(80, 36),
+                          ),
+                          child: Text(
+                            'Menunggu',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Color.fromARGB(255, 78, 119, 78),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
-          ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(top: 8.0), // jarak di atas item
-                      child: ListTile(
-                        trailing: IconButton(
-                          icon: Icon(
-                            Icons.more_vert,
-                            color: Color.fromARGB(255, 78, 118, 78),
-                          ),
-                          onPressed: () {},
-                        ),
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/profil_ana.jpg'),
-                        ),
-                        title: Padding(
-                          padding: EdgeInsets.only(top: 8.0),
-                          child: Text(
-                            'anaputriainiyyah',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              'images/beranda_anna.jpeg',
-                              height: 200,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(height: 8),
-                            Text(
-                              'Berbisnis makanan kecil semakin mudah dengan bantuan aplikasi ini. Dengan dukungan dari para investor, saya bisa terus mengembangkan usaha dan menjangkau lebih banyak pelanggan di Bandung :)',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-                ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(top: 8.0),
-                      child: ListTile(
-                        trailing: IconButton(
-                          icon: Icon(
-                            Icons.more_vert,
-                            color: Color.fromARGB(255, 78, 118, 78),
-                          ),
-                          onPressed: () {},
-                        ),
-                        leading: CircleAvatar(
-                          backgroundImage: AssetImage('images/profil_ana.jpg'),
-                        ),
-                        title: Padding(
-                          padding: EdgeInsets.only(top: 8.0),
-                          child: Text(
-                            'anaputriainiyyah',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              'images/beranda_anna.jpeg',
-                              height: 200,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                            SizedBox(height: 8),
-                            Text(
-                              'Berbisnis makanan kecil semakin mudah dengan bantuan aplikasi ini. Dengan dukungan dari para investor, saya bisa terus mengembangkan usaha dan menjangkau lebih banyak pelanggan di Bandung :)',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ],
             ),
           ),
         ],
@@ -492,16 +391,6 @@ class _HomePageState extends State<HomePage>
             ),
             label: 'Home',
             activeIcon: Icon(Icons.home, color: Color(0xFF1C4B1C)),
-          ),
-          BottomNavigationBarItem(
-            icon: GestureDetector(
-              onTap: () {
-                Navigator.pushReplacementNamed(context, '/search');
-              },
-              child: Icon(Icons.search, color: Colors.grey),
-            ),
-            label: "Search",
-            activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
           ),
           BottomNavigationBarItem(
             icon: GestureDetector(

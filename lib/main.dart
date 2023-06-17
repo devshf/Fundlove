@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:fundlove/firebase_options.dart';
+import 'package:tubes_promvis/firebase_options.dart';
 import 'splashscreen.dart';
 import 'login_sebagai.dart';
 import 'login_page.dart';
@@ -11,7 +11,7 @@ import 'pinjaman.dart';
 import 'tagihan.dart';
 import 'pembayaran_tagihan.dart';
 import 'riwayat_transaksi.dart';
-import 'search.dart';
+// import 'search.dart';
 import 'profile.dart';
 import 'reportmenu.dart';
 import 'ubah_sandi.dart';
@@ -22,6 +22,7 @@ import 'detailchat.dart';
 import 'topup_member.dart';
 import 'tarik_dana_member.dart';
 import 'be/auth_page.dart';
+import 'edit_profil.dart';
 
 //Investor
 import 'homepage_investor.dart';
@@ -38,6 +39,8 @@ import 'detail_mitra.dart';
 import 'data_pribadi_investor.dart';
 import 'riwayat_pendanaan_investor.dart';
 import 'laporan_detail_permitra.dart';
+import 'edit_profil_investor.dart';
+import 'ubah_sandi_investor.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,16 +72,17 @@ class MyApp extends StatelessWidget {
         '/tagihan': (context) => HalamanTagihan(),
         '/bayar_tagihan': (context) => HalamanPembayaranTagihan(),
         '/transaksi_terakhir': (context) => TransaksiTerakhir(),
-        '/search': (context) => MenuSearchPage(),
+        // '/search': (context) => MenuSearchPage(),
         '/profile': (context) => ProfileScreen(),
         '/report': (context) => ReportScreen(),
-        '/password': (context) => ChangePasswordPage(),
+        '/password': (context) => UbahSandiMember(),
         '/data_pribadi': (context) => HalamanDataPribadi(),
         '/pusat_bantuan': (context) => HalamanPusatBantuan(),
         '/metode_tagihan': (context) => HalamanTopUp(),
         '/detail_chat': (context) => DetailChat(),
         '/topup_member': (context) => HalamanTopupMember(),
         '/tarik_dana_member': (context) => HalamanTarikDanaMember(),
+        '/edit_profil_member': (context) => HalamanEditMember(),
 
         //Investor
         '/homepage_investor': (context) => HomePageInvestor(),
@@ -94,6 +98,8 @@ class MyApp extends StatelessWidget {
         '/data_pribadi_investor': (context) => HalamanDataPribadiInvestor(),
         '/riwayat_pendanaan_investor': (context) => RiwayatPendanaanInvestor(),
         '/detail_permitra': (context) => DetailLaporanPerMitra(),
+        '/edit_profil_investor': (context) => HalamanEditProfile(),
+        '/ubah_sandi_investor': (context) => UbahSandiInvestor(),
       },
     );
   }

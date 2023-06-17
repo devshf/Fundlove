@@ -13,17 +13,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: ChangePasswordPage(),
+      home: UbahSandiMember(),
     );
   }
 }
 
-class ChangePasswordPage extends StatelessWidget {
+class UbahSandiMember extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Warna AppBar
+        backgroundColor: Colors.white, // Warna AppBar
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           color: Colors.black,
@@ -32,7 +32,7 @@ class ChangePasswordPage extends StatelessWidget {
           },
         ),
         title: Text(
-          'Edit Profil',
+          'Ubah Kata Sandi',
           style: TextStyle(
             color: Colors.black,
           ),

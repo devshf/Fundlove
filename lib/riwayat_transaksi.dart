@@ -28,53 +28,11 @@ class TransaksiTerakhir extends StatelessWidget {
       'message': 'Dana pinjaman = Rp 5.000.000'
     },
     {
-      'name': 'Dewi Halimah',
+      'name': 'Dodo Hermanto',
       'time': '1 Januari 2022',
       'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
+          'https://images.unsplash.com/photo-1516239482977-b550ba7253f2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
       'message': 'Dana pinjaman = Rp 10.000.000'
-    },
-    {
-      'name': 'Alissa Susanti',
-      'time': '17 September 2021',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'message': 'Dana pinjaman = Rp 3.000.000'
-    },
-    {
-      'name': 'Alissa Susanti',
-      'time': '12 Mei 2021',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'message': 'Dana pinjaman = Rp 7.000.000'
-    },
-    {
-      'name': 'Alissa Susanti',
-      'time': '3 Januari 2021',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'message': 'Dana pinjaman = Rp 8.000.000'
-    },
-    {
-      'name': 'Alissa Susanti',
-      'time': '11 Oktober 2020',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'message': 'Dana pinjaman = Rp 12.000.000'
-    },
-    {
-      'name': 'Alissa Susanti',
-      'time': '2 Februari 2020',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'message': 'Dana pinjaman = Rp 6.000.000'
-    },
-    {
-      'name': 'Alissa Susanti',
-      'time': '13 Desember 2019',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'message': 'Dana pinjaman = Rp 4.000.000'
     },
   ];
 
