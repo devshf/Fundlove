@@ -9,8 +9,7 @@ class HalamanDetailTopUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController textEditController =
-        TextEditingController(); // Deklarasi controller
+    TextEditingController textEditController = TextEditingController();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -77,9 +76,7 @@ class HalamanDetailTopUp extends StatelessWidget {
               padding: EdgeInsets.only(top: 16),
             ),
             ElevatedButton(
-              onPressed: () {
-                // Tambahkan logika saat tombol Top Up ditekan
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color.fromARGB(255, 78, 119, 78),
                 shape: RoundedRectangleBorder(

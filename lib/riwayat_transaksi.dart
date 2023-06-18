@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Riwayat Transaksi',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: TransaksiTerakhir(),
     );
@@ -31,7 +31,7 @@ class TransaksiTerakhir extends StatelessWidget {
       'name': 'Dodo Hermanto',
       'time': '1 Januari 2022',
       'photoUrl':
-          'https://images.unsplash.com/photo-1516239482977-b550ba7253f2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+          'https://images.unsplash.com/photo-1569443693539-175ea9f007e8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
       'message': 'Dana pinjaman = Rp 10.000.000'
     },
   ];

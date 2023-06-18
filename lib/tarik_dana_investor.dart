@@ -108,8 +108,7 @@ class HalamanTarikDana extends StatelessWidget {
                                 hintText: "Masukkan metode penarikan",
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
-                                      color: Color.fromARGB(255, 78, 119,
-                                          78)), // Ganti warna sesuai kebutuhan
+                                      color: Color.fromARGB(255, 78, 119, 78)),
                                 ),
                               ),
                             ),

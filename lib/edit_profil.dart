@@ -51,7 +51,7 @@ class HalamanEditMember extends StatelessWidget {
                 radius: 80,
                 backgroundImage: AssetImage('images/profil_maria.jpg'),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               TextButton.icon(
                 onPressed: () {
                   print('Ubah foto profil');
@@ -59,7 +59,7 @@ class HalamanEditMember extends StatelessWidget {
                 icon: Icon(Icons.change_circle),
                 label: Text('Ganti Foto Profil'),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 5),
               Container(
                 //width: 300,
                 decoration: BoxDecoration(
@@ -74,31 +74,38 @@ class HalamanEditMember extends StatelessWidget {
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'Nama Pengguna',
+                        labelText: 'Username',
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'Nomor Telepon',
+                        labelText: 'Lokasi',
                         border: OutlineInputBorder(),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 5),
                     TextFormField(
                       decoration: InputDecoration(
-                        labelText: 'Email',
+                        labelText: 'Jenis Usaha',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: 'Bio',
                         border: OutlineInputBorder(),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               TextButton(
                   onPressed: () {
                     Navigator.of(context).pushNamed('/password');

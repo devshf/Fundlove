@@ -4,17 +4,17 @@ import 'pembayaran_tagihan.dart';
 import 'topup_member.dart';
 
 void main() {
-  runApp(HalamanTagihan());
+  runApp(HalamanSudahBayar());
 }
 
-class HalamanTagihan extends StatefulWidget {
-  const HalamanTagihan({Key? key}) : super(key: key);
+class HalamanSudahBayar extends StatefulWidget {
+  const HalamanSudahBayar({Key? key}) : super(key: key);
 
   @override
-  _HalamanTagihanState createState() => _HalamanTagihanState();
+  _HalamanSudahBayarState createState() => _HalamanSudahBayarState();
 }
 
-class _HalamanTagihanState extends State<HalamanTagihan> {
+class _HalamanSudahBayarState extends State<HalamanSudahBayar> {
   TextEditingController textEditController = TextEditingController();
 
   @override
@@ -98,73 +98,16 @@ class _HalamanTagihanState extends State<HalamanTagihan> {
                           ),
                         ],
                       ),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 8),
-                            child: Text(
-                              "Rp500.000",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 24,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8),
-                            child: Text(
-                              "Jatuh tempo 2 April 2024",
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                       trailing: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).pushNamed('/topup_member');
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          primary: Color.fromARGB(255, 78, 119, 78),
+                          primary: Color.fromARGB(255, 202, 202, 202),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
                           minimumSize: Size(80, 36),
                         ),
                         child: Text('Bayar'),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 16),
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: Color.fromARGB(255, 202, 202, 202),
-                        width: 2,
-                      ),
-                    ),
-                    child: ListTile(
-                      contentPadding: EdgeInsets.all(10),
-                      title: Text(
-                        "Pinjaman Belum Dibayar",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      trailing: Text(
-                        "Rp1.500.000",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
                       ),
                     ),
                   ),

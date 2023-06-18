@@ -23,23 +23,19 @@ class MyApp extends StatelessWidget {
 class HalamanFiturChat extends StatelessWidget {
   final List<Map<String, dynamic>> chatList = [
     {
-      'name': 'Anna Putri Aniyyah',
+      'name': 'Dian Pratama',
       'time': '17.26',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
-      'lastMessage': 'Terimakasih..',
-      'unreadCount':
-          1, // Menambahkan properti untuk jumlah pesan yang belum dibaca
+      'backgroundImage': 'images/dianpratama.png',
+      'lastMessage': 'Sama-sama',
+      'unreadCount': 1,
     },
     {
-      'name': 'Dewi Susilawati',
+      'name': 'Anna Anniyah',
       'time': '15.35',
-      'photoUrl':
-          'https://images.unsplash.com/photo-1504735217152-b768bcab5ebc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=0ec8291c3fd2f774a365c8651210a18b',
+      'backgroundImage': 'images/ana.png',
       'lastMessage': 'Berbisnis dengan...',
       'unreadCount': 1,
     },
-    // ...
   ];
 
   @override
@@ -95,7 +91,7 @@ class HalamanFiturChat extends StatelessWidget {
                         return ListTile(
                           leading: CircleAvatar(
                             backgroundImage:
-                                NetworkImage(chatList[index]['photoUrl']),
+                                AssetImage(chatList[index]['backgroundImage']),
                           ),
                           title: Row(
                             children: [

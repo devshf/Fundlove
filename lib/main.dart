@@ -23,6 +23,7 @@ import 'topup_member.dart';
 import 'tarik_dana_member.dart';
 import 'be/auth_page.dart';
 import 'edit_profil.dart';
+import 'bayardone.dart';
 
 //Investor
 import 'homepage_investor.dart';
@@ -83,6 +84,7 @@ class MyApp extends StatelessWidget {
         '/topup_member': (context) => HalamanTopupMember(),
         '/tarik_dana_member': (context) => HalamanTarikDanaMember(),
         '/edit_profil_member': (context) => HalamanEditMember(),
+        '/bayar_done': (context) => HalamanSudahBayar(),
 
         //Investor
         '/homepage_investor': (context) => HomePageInvestor(),
@@ -94,7 +96,7 @@ class MyApp extends StatelessWidget {
         '/detail_topup_investor': (context) => HalamanTarikDana(),
         '/report_investor': (context) => ReportPage(),
         '/profile_investor': (context) => ProfileScreenPage(),
-        '/detail_mitra': (context) => HalamanDetailMitra(),
+        '/halaman_mitra': (context) => HalamanDetailMitra(),
         '/data_pribadi_investor': (context) => HalamanDataPribadiInvestor(),
         '/riwayat_pendanaan_investor': (context) => RiwayatPendanaanInvestor(),
         '/detail_permitra': (context) => DetailLaporanPerMitra(),

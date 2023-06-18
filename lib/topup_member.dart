@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bayardone.dart';
 
 void main() {
   runApp(const HalamanTopupMember());
@@ -11,13 +12,13 @@ class HalamanTopupMember extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Halaman Top Up',
+      title: 'Halaman Pembayaran',
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Text(
-            'Top Up',
+            'Metode Pembayaran',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -38,7 +39,7 @@ class HalamanTopupMember extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'Top Up sekarang dan raih kesempatan investasi yang lebih besar!',
+                  'Silahkan pilih metode pembayaran di bawah ini!',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -238,8 +239,7 @@ class HalamanTopupMember extends StatelessWidget {
                           icon: Icon(Icons.arrow_forward_ios,
                               color: Color.fromARGB(255, 63, 63, 63)),
                           onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed('/detail_topup_investor');
+                            Navigator.of(context).pushNamed('/bayar_done');
                           },
                         ),
                       ),

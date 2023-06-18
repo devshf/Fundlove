@@ -13,6 +13,18 @@ void main() {
   runApp(const ReportPage());
 }
 
+// class HalamanReport extends StatelessWidget {
+//   const HalamanReport({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: const ReportPage(),
+//     );
+//   }
+// }
+
 class ReportPage extends StatefulWidget {
   const ReportPage({Key? key}) : super(key: key);
 
@@ -183,7 +195,7 @@ class _ReportPageState extends State<ReportPage> {
                         ),
                         leading: CircleAvatar(
                           radius: 20,
-                          backgroundImage: AssetImage('images/endang.png'),
+                          backgroundImage: AssetImage('images/kokom.jpg'),
                         ),
                       ),
                     ),
@@ -290,8 +302,7 @@ class _ReportPageState extends State<ReportPage> {
                         ),
                         leading: CircleAvatar(
                           radius: 20,
-                          backgroundImage: NetworkImage(
-                              'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'),
+                          backgroundImage: AssetImage('images/bunga.png'),
                         ),
                         trailing: Text('Selesai'),
                       ),

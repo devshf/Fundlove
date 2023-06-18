@@ -45,17 +45,15 @@ class DetailChat extends StatelessWidget {
                                 IconButton(
                                   icon: Icon(Icons.arrow_back_ios),
                                   color: Colors.white,
-                                  onPressed: () {
-                                    // Aksi tombol back
-                                  },
+                                  onPressed: () {},
                                 ),
                                 CircleAvatar(
-                                  backgroundImage: NetworkImage(
-                                      'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'),
+                                  backgroundImage:
+                                      AssetImage('images/dianpratama.png'),
                                 ),
                                 SizedBox(width: 8),
                                 Text(
-                                  'Anna Putri Aniyyah',
+                                  'Dian Pratama',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -91,7 +89,7 @@ class DetailChat extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
-                            message: 'Hallo, apa kabar?',
+                            message: 'Hallo pak',
                             isMe: true,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 14, vertical: 14),
@@ -101,7 +99,7 @@ class DetailChat extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
-                            message: 'Hai, kabar baik. Kamu gmn??',
+                            message: 'Ada yang bisa dibantu?',
                             isMe: false,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 14, vertical: 14),
@@ -111,7 +109,8 @@ class DetailChat extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
-                            message: 'Baik juga. Apa kesibukanmu sekarang?',
+                            message:
+                                'Saya izin konfirmasi tentang pembayaran, apakah sudah masuk?',
                             isMe: true,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 14, vertical: 14),
@@ -121,7 +120,7 @@ class DetailChat extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
-                            message: 'Sibuk berjualan baju nih...',
+                            message: 'Sudah masuk',
                             isMe: false,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 14, vertical: 14),
@@ -131,7 +130,7 @@ class DetailChat extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
-                            message: 'Wah keren yah, sukses!',
+                            message: 'Baik pak, terimakasih',
                             isMe: true,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 14, vertical: 14),
@@ -141,7 +140,7 @@ class DetailChat extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.only(bottom: 12),
                           child: BubbleChat(
-                            message: 'Terima kasih...',
+                            message: 'Sama-sama',
                             isMe: false,
                             padding: EdgeInsets.symmetric(
                                 horizontal: 14, vertical: 14),

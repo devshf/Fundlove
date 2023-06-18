@@ -1,3 +1,6 @@
+import 'package:firebase_database/firebase_database.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'notifikasi_semua.dart';
 import 'chat.dart';
@@ -8,6 +11,8 @@ import 'riwayat_transaksi.dart';
 import 'search.dart';
 import 'profile.dart';
 import 'reportmenu.dart';
+import 'topup_member.dart';
+import 'tarik_dana_member.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: HomePage(),
+      home: FetchData(),
     );
   }
 }
@@ -33,8 +38,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _HomePageState extends State<HomePage> {
   late TabController _tabController;
   int _currentIndex = 0;
 
@@ -43,6 +47,8 @@ class _HomePageState extends State<HomePage>
       _currentIndex = index;
     });
   }
+
+  final databaseRef = FirebaseDatabase.instance.reference();
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +79,13 @@ class _HomePageState extends State<HomePage>
         ],
       ),
       body: Column(
+        // query: databaseRef,
+        // itemBuilder: (BuildContext context, DataSnapshot snapshot,
+        // Animation<double> animation, int index){
+        //   return ListTile(
+        //     subtitle: snapshot.value['nominal'],
+        //   );
+        // },
         children: [
           Expanded(
             child: Container(
@@ -111,30 +124,11 @@ class _HomePageState extends State<HomePage>
                           ),
                           SizedBox(height: 8),
                           Text(
-                            "Rp5.000.000",
+                            "Rp2.000.000",
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),
-                          ),
-                        ],
-                      ),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            icon: Icon(Icons.add_circle, color: Colors.white),
-                            onPressed: () {
-                              Navigator.of(context).pushNamed('/topup_member');
-                            },
-                          ),
-                          SizedBox(width: 16),
-                          IconButton(
-                            icon: Icon(Icons.money, color: Colors.white),
-                            onPressed: () {
-                              Navigator.of(context)
-                                  .pushNamed('/tarik_dana_member');
-                            },
                           ),
                         ],
                       ),
@@ -216,7 +210,7 @@ class _HomePageState extends State<HomePage>
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.of(context)
-                                    .pushNamed('/bayar_tagihan');
+                                    .pushNamed('/tarik_dana_member');
                               },
                               child: Container(
                                 width: 60,
@@ -225,7 +219,7 @@ class _HomePageState extends State<HomePage>
                                   shape: BoxShape.circle,
                                 ),
                                 child: Icon(
-                                  Icons.payment_outlined,
+                                  Icons.money,
                                   color: Colors.white,
                                 ),
                               ),
@@ -236,7 +230,7 @@ class _HomePageState extends State<HomePage>
                             ),
                             SizedBox(height: 4),
                             Text(
-                              'Pembayaran',
+                              'Tarik Dana',
                               style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
@@ -283,7 +277,7 @@ class _HomePageState extends State<HomePage>
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: EdgeInsets.only(top: 24, left: 4, bottom: 16),
+                      padding: EdgeInsets.only(top: 16, left: 16, bottom: 16),
                       child: Text(
                         'Riwayat Pengajuan Pinjaman',
                         style: TextStyle(
@@ -305,13 +299,6 @@ class _HomePageState extends State<HomePage>
                     height: 70,
                     child: Row(
                       children: [
-                        // Padding(
-                        //   padding: EdgeInsets.only(left: 10),
-                        //   child: CircleAvatar(
-                        //     radius: 20,
-                        //     backgroundImage: AssetImage('images/dianpratama.png'),
-                        //   ),
-                        // ),
                         SizedBox(width: 10),
                         Expanded(
                           child: Column(
@@ -324,9 +311,6 @@ class _HomePageState extends State<HomePage>
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 8),
                               ),
                               Text(
                                 "Nominal: Rp. ..... ",
@@ -415,5 +399,74 @@ class _HomePageState extends State<HomePage>
         ],
       ),
     );
+  }
+}
+
+class FetchData extends StatefulWidget {
+  // static const nameRoute = '/homepage';
+  @override
+  _FetchDataState createState() => _FetchDataState();
+}
+
+class _FetchDataState extends State<FetchData> {
+  Query dbRef = FirebaseDatabase.instance.ref().child('Pinjaman');
+
+  Widget listItem({required Map student}) {
+    return Container(
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
+      height: 110,
+      color: Colors.amberAccent,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            student['nominal'],
+            style: TextStyle(fontSize: 10),
+          ),
+          Text(
+            student['waktu_pengajuan'],
+            style: TextStyle(fontSize: 10),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {},
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.edit,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                width: 200,
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.delete,
+                      color: Colors.black,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    throw UnimplementedError();
   }
 }

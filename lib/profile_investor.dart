@@ -193,10 +193,6 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
               ),
             ),
           ),
-          // pembatas
-          // Divider(
-          //   color: Color.fromARGB(255, 78, 119, 78),
-          // ),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -210,7 +206,6 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
               ),
             ),
           ),
-
           ListTile(
             leading: Icon(Icons.app_settings_alt_outlined),
             title: Text('Ubah Password'),
@@ -238,6 +233,24 @@ class _ProfileScreenPageState extends State<ProfileScreenPage> {
             onTap: () {
               Navigator.of(context).pushNamed('/pusat_bantuan');
             },
+          ),
+          ListTile(
+            title: Align(
+              alignment: Alignment.center,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/login_sebagai');
+                },
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  backgroundColor: Color.fromARGB(255, 78, 119, 78),
+                  minimumSize: Size(48, 48),
+                ),
+                child: Text('Logout'),
+              ),
+            ),
           ),
         ],
       ),

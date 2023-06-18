@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'detail_mitra.dart';
+import 'package:flutter/gestures.dart';
 
 void main() {
   runApp(const HalamanNotifikasiInvestor());
@@ -11,7 +13,7 @@ class HalamanNotifikasiInvestor extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const NotificationPage(),
+      home: NotificationPage(),
     );
   }
 }
@@ -31,15 +33,26 @@ class NotificationPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            _buildNotificationItem(
+            notification(
+              title: 'Pendanaan UMKM',
+              subtitle: 'Mitra Warung Seblak',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new HalamanDetailMitra()));
+              },
+            ),
+            const SizedBox(height: 16),
+            notification(
+              title: 'Selamat akunmu telah terverifikasi!',
+              subtitle: '1 hari yang lalu',
+            ),
+            const SizedBox(height: 16),
+            notification(
               title:
                   'Pendanaan sukses dilakukan ke mitra Kerupuk Kulit Barokah!',
               subtitle: '1 jam yang lalu',
-            ),
-            const SizedBox(height: 16),
-            _buildNotificationItem(
-              title: 'Selamat akunmu telah terverifikasi!',
-              subtitle: '1 hari yang lalu',
             ),
           ],
         ),
@@ -47,15 +60,16 @@ class NotificationPage extends StatelessWidget {
     );
   }
 
-  Widget _buildNotificationItem({
+  Widget notification({
     required String title,
     required String subtitle,
+    VoidCallback? onPressed,
   }) {
     return ListTile(
       leading: Icon(Icons.notifications),
       title: Text(title),
       subtitle: Text(subtitle),
-      onTap: () {},
+      onTap: onPressed,
     );
   }
 }

@@ -22,22 +22,12 @@ class HalamanListUmkm extends StatelessWidget {
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               )),
-
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios, color: Colors.black),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
-          // actions: [
-          //   IconButton(
-          //     padding: EdgeInsets.only(right: 16),
-          //     icon: Icon(Icons.shopping_cart, color: Color.fromARGB(255, 78, 119, 78)),
-          //     onPressed: () {
-          //
-          //     },
-          //   ),
-          //],
         ),
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -53,7 +43,7 @@ class HalamanListUmkm extends StatelessWidget {
               ),
               child: ListTile(
                 contentPadding: EdgeInsets.all(10),
-                title: Text("Hasna Julianti",
+                title: Text("Maria Purnamasari ",
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -61,7 +51,7 @@ class HalamanListUmkm extends StatelessWidget {
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Modal Dagang Warung Makan"),
+                    Text("Modal Dagang Seblak"),
                     Row(
                       children: [
                         Icon(Icons.location_on, size: 12),
@@ -165,14 +155,16 @@ class HalamanListUmkm extends StatelessWidget {
                 ),
                 leading: CircleAvatar(
                   radius: 20,
-                  backgroundImage: NetworkImage(
-                      'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'),
+                  backgroundImage: AssetImage('images/profil_maria.jpg'),
                 ),
                 trailing: IconButton(
                   icon: Icon(Icons.add_circle,
                       color: Color.fromARGB(255, 78, 119, 78)),
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/detail_mitra');
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new HalamanDetailMitra()));
                   },
                 ),
               ),
@@ -312,7 +304,9 @@ class HalamanListUmkm extends StatelessWidget {
                 trailing: IconButton(
                   icon: Icon(Icons.add_circle,
                       color: Color.fromARGB(255, 78, 119, 78)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/detail_mitra');
+                  },
                 ),
               ),
             ),
@@ -455,7 +449,6 @@ class HalamanListUmkm extends StatelessWidget {
                 ),
               ),
             ),
-            // Tambahkan Container dan ListTile lainnya di sini
           ],
         ),
       ),

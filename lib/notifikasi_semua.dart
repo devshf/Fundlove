@@ -62,20 +62,8 @@ class _NotificationScreenState extends State<NotificationScreen>
             Navigator.pop(context);
           },
         ),
-        bottom: TabBar(
-          controller: _tabController,
-          labelColor: Colors.black,
-          indicatorColor: Colors.black,
-          unselectedLabelColor: Colors.black,
-          tabs: [
-            Tab(text: 'Semua'),
-            Tab(text: 'Pinjaman'),
-            Tab(text: 'Following'),
-          ],
-        ),
       ),
-      body: TabBarView(
-        controller: _tabController,
+      body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -85,109 +73,33 @@ class _NotificationScreenState extends State<NotificationScreen>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildNotificationRow(
-                      'Farah mulai mengikuti Anda',
-                      // iconData: Icons.person,
-                      trailing: ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            isFollowing = !isFollowing;
-                          });
-                        },
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            isFollowing ? Colors.green : Colors.white,
-                          ),
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.black),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.0),
-                              side: BorderSide(color: Colors.grey),
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          isFollowing ? 'Mengikuti' : 'Ikuti',
-                        ),
-                      ),
-                      avatar: CircleAvatar(
-                        backgroundImage: AssetImage('images/profil_farah.png'),
-                      ),
-                      subtitle: '30 menit yang lalu',
-                    ),
-                    _buildNotificationRow(
+                    Text(
                       'Selamat! Peminjaman Anda telah disetujui',
-                      subtitle: '2 jam yang lalu',
-                    ),
-                    _buildNotificationRow(
-                      'Pembayaran sukses! Tagihan Anda sebesar Rp 750.000 telah terbayar',
-                      subtitle: '1 hari yang lalu',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildNotificationRow(
-                      'Selamat! Peminjaman Anda telah disetujui',
-                      subtitle: '2 jam yang lalu',
-                    ),
-                    _buildNotificationRow(
-                      'Pembayaran sukses! Tagihan Anda sebesar Rp 750.000 telah terbayar',
-                      subtitle: '1 hari yang lalu',
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Container(
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildNotificationRow(
-                      'Farah mulai mengikuti Anda',
-                      // iconData: Icons.person,
-                      trailing: ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            isFollowing = !isFollowing;
-                          });
-                        },
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            isFollowing ? Colors.green : Colors.white,
-                          ),
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.black),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.0),
-                              side: BorderSide(color: Colors.grey),
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          isFollowing ? 'Mengikuti' : 'Ikuti',
-                        ),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
                       ),
-                      avatar: CircleAvatar(
-                        backgroundImage: AssetImage('images/profil_farah.png'),
+                    ),
+                    Text(
+                      '2 jam yang lalu',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(bottom: 16)),
+                    Text(
+                      'Pembayaran sukses! Tagihan Anda sebesar Rp 750.000 telah terbayar',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '1 hari yang lalu',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey,
                       ),
                     ),
                   ],
@@ -195,45 +107,6 @@ class _NotificationScreenState extends State<NotificationScreen>
               ),
             ),
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildNotificationRow(
-    String text, {
-    IconData? iconData,
-    Widget? trailing,
-    Widget? avatar,
-    String? subtitle,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: Row(
-        children: [
-          if (avatar != null) avatar,
-          if (avatar != null) SizedBox(width: 8.0),
-          if (iconData != null) Icon(iconData),
-          if (iconData != null) SizedBox(width: 8.0),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                text,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              if (subtitle != null)
-                Text(
-                  subtitle,
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
-                ),
-            ],
-          ),
-          Spacer(),
-          if (trailing != null) trailing,
         ],
       ),
     );

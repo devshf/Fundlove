@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'notification_investor.dart';
 
 void main() {
   runApp(HalamanDetailMitra());
@@ -51,7 +52,7 @@ class _HalamanDetailMitraState extends State<HalamanDetailMitra> {
               ),
               child: ListTile(
                 contentPadding: EdgeInsets.all(10),
-                title: Text("Hasna Julianti",
+                title: Text("Maria Purnamasari",
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -59,7 +60,7 @@ class _HalamanDetailMitraState extends State<HalamanDetailMitra> {
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Modal Dagang Warung Makan"),
+                    Text("Modal Dagang Seblak"),
                     Row(
                       children: [
                         Icon(Icons.location_on, size: 12),
@@ -163,15 +164,8 @@ class _HalamanDetailMitraState extends State<HalamanDetailMitra> {
                 ),
                 leading: CircleAvatar(
                   radius: 20,
-                  backgroundImage: NetworkImage(
-                      'https://images.unsplash.com/photo-1541710430735-5fca14c95b00?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ'),
+                  backgroundImage: AssetImage('images/profil_maria.jpg'),
                 ),
-                // trailing: IconButton(
-                //   icon: Icon(Icons.add_circle, color: Color.fromARGB(255, 78, 119, 78)),
-                //   onPressed: () {
-                //     Navigator.pop(context);
-                //   },
-                // ),
               ),
             ),
 
@@ -261,7 +255,7 @@ class _HalamanDetailMitraState extends State<HalamanDetailMitra> {
                         ),
                         Expanded(
                           child: Text(
-                            'Dagang Warung Makan',
+                            'Dagang Warung Seblak',
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -383,9 +377,7 @@ class _HalamanDetailMitraState extends State<HalamanDetailMitra> {
                       padding: EdgeInsets.only(top: 180),
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {
-                          // ini nanti diisi buat ngarahin ke hal list umkm
-                        },
+                        onPressed: () {},
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 78, 119, 78),
                             shape: RoundedRectangleBorder(

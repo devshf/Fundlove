@@ -100,17 +100,6 @@ class _ReportScreenState extends State<ReportScreen>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // SizedBox(height: 16.0),
-                  // FractionallySizedBox(
-                  //   widthFactor: 0.4,
-                  //   child: Container(
-                  //     padding: EdgeInsets.all(16.0),
-                  //     decoration: BoxDecoration(
-                  //       color: Colors.grey[200],
-                  //       borderRadius: BorderRadius.circular(10.0),
-                  //     ),
-                  //   ),
-                  // ),
                   SizedBox(height: 16.0),
                   Container(
                     padding: EdgeInsets.all(16.0),
@@ -505,16 +494,6 @@ class _ReportScreenState extends State<ReportScreen>
             label: 'Home',
             activeIcon: Icon(Icons.home, color: Color(0xFF1C4B1C)),
           ),
-          // BottomNavigationBarItem(
-          //   icon: GestureDetector(
-          //     onTap: () {
-          //       Navigator.pushReplacementNamed(context, '/search');
-          //     },
-          //     child: Icon(Icons.search, color: Colors.grey),
-          //   ),
-          //   label: "Search",
-          //   activeIcon: Icon(Icons.search, color: Color(0xFF1C4B1C)),
-          // ),
           BottomNavigationBarItem(
             icon: GestureDetector(
               onTap: () {
