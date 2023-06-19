@@ -1,16 +1,6 @@
-# flutter_application_fund
+Fundlove merupakan aplikasi peer to peer lending yang digunakan untuk berinvestasi atau memberikan pinjaman bagi UMKM. Aplikasi ini digunakan oleh dua user yaitu Member (pelaku UMKM) dan investor. Project ini merupakan tugas akhir dari mata kuliah Pemrograman Visual dan Piranti Bergerak yang diampu oleh Bapak Dr. Yudi Wibisono, S.T., M.T..
 
-A new Flutter project.
+Berikut merupakan tampilan dari aplikasi Fundlove:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Splashscreen
+![image](https://github.com/devshf/Fundlove/assets/99585123/32166d48-f7bf-429c-952f-11867048691f)
