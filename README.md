@@ -1,4 +1,4 @@
-Fundlove merupakan aplikasi peer to peer lending yang digunakan untuk berinvestasi atau memberikan pinjaman bagi UMKM. Aplikasi ini digunakan oleh dua role user yaitu Member (pelaku UMKM) dan investor. Project ini merupakan tugas akhir dari mata kuliah Pemrograman Visual dan Piranti Bergerak yang diampu oleh Bapak Dr. Yudi Wibisono, S.T., M.T.
+Fundlove merupakan aplikasi _peer to peer lending_ yang digunakan untuk berinvestasi atau memberikan pinjaman bagi UMKM. Aplikasi ini digunakan oleh dua role user yaitu Member (pelaku UMKM) dan investor. Project ini merupakan tugas akhir dari mata kuliah Pemrograman Visual dan Piranti Bergerak yang diampu oleh Bapak Dr. Yudi Wibisono, S.T., M.T.
 
 Berikut merupakan tampilan dari aplikasi Fundlove:
 
@@ -53,6 +53,7 @@ Berikut merupakan tampilan dari aplikasi Fundlove:
 
 
 **Detail Mitra**
+
 ![image](https://github.com/devshf/Fundlove/assets/99585123/c123e59b-61bb-4d17-ac37-9fc5a0f56027)
 ![image](https://github.com/devshf/Fundlove/assets/99585123/98b22fe7-2e5c-440b-bee6-d6c4cf140a9b)
 
